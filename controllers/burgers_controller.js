@@ -27,7 +27,7 @@ router.get('/burgers', function (req, res) {
 // route defined for the /burgers/create URI
 
 router.post('/burgers/create', function (req, res) {
-	burger.insertOne(['burger_name', 'devoured'], [req.body.burger_name, req.body.devoured], function () {
+	burger.insertOne(['burger_name','devoured'], [req.body.burger_name,0], function () {
 		res.redirect('/burgers');
 	});
 });

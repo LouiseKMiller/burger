@@ -2,26 +2,29 @@
 // UT BOOT CAMP
 // LOUISE K MILLER
 
-// ==============================================================================
+// ============================================================
 // DEPENDENCIES
 // Node Package Modules
-// ==============================================================================
+// ============================================================
 
 // import Node File System module express - a fast, unopinionated, minimalist web framework
 var express = require('express');
-// import Node File System module body-parser - body parsing middleware.  It parses
-// incoming request bodies in a middleware before your handlers
+// import Node File System module body-parser - body parsing middleware.  It parses incoming request bodies in a middleware before your handlers
 var bodyParser = require('body-parser');
 // import Node File System module method-override - lets you use HTTP verbs such as PUT or DELETE in places where the client doesn't support it
 var methodOverride = require('method-override');
 // create an instance of express by running the express function
 var app = express();
 
-// ************
+// ====================================================
 // Serve static content for the app from the "public" directory in the application directory.
-// QUESTION:  IS THIS NEEDED?  OR DOES EXPRESS-HANDLEBARS SERVE UP THE STATIC CONTENT?
+// express.static is express's (only) built-in middleware
+// It is used to serve static files such as images and html, css and js files.
+// The process.cwd method return the current working directory of the node.js process
 app.use(express.static(process.cwd() + '/public'));
 
+// returns middleware that parses URL encoded bodies
+//
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
