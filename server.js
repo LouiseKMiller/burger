@@ -53,5 +53,5 @@ var routes = require('./controllers/burgers_controller.js');
 // bind routes to root (WHY IS THIS NEEDED IF WE'VE REQUIRED THE CONTROLLER.JS FILE?)
 app.use('/', routes);
 
-var port = 3000;
+var PORT = process.env.PORT || 3000;
 app.listen(port);
